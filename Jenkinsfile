@@ -7,9 +7,10 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('Build Docker') {
       steps {
-        sh 'ls -al'
+        sh '''docker build -t scrapper_jen .
+docker run -p 8085:8000 scrapper_jen'''
       }
     }
 
